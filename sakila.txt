@@ -1,0 +1,63 @@
+SELECT first_name, last_name FROM actor;
+
+SELECT last_name FROM actor WHERE first_name = 'JOHN';
+
+SELECT first_name, last_name FROM actor WHERE last_name = 'NEESON';
+
+SELECT first_name, last_name FROM actor WHERE actor_id LIKE '%0';
+
+SELECT description FROM film WHERE film_id = 100;
+
+SELECT film_id, title FROM film WHERE rating = 'R';
+
+SELECT film_id, title FROM film WHERE rating != 'R';
+
+SELECT film_id, title, length FROM film ORDER BY length ASC LIMIT 10;
+
+SELECT film_id, title, length FROM film ORDER BY length DESC;
+SELECT film_id, title, length FROM film WHERE length = (SELECT MAX(length) FROM film);
+
+SELECT film_id, title, special_features FROM film WHERE special_features = 'Deleted Scenes';
+SELECT film_id, title, special_features FROM film WHERE special_features LIKE '%Deleted Scenes%';
+
+SELECT DISTINCT last_name FROM actor ORDER BY last_name DESC;
+
+
+
+SELECT AVG(length) FROM film_list;
+
+SELECT DISTINCT category FROM film_list;
+SELECT AVG(length) FROM film_list WHERE category = 'Documentary';
+SELECT AVG(length) FROM film_list WHERE category = 'Horror';
+SELECT AVG(length) FROM film_list WHERE category = 'Family';
+SELECT AVG(length) FROM film_list WHERE category = 'Foreign';
+SELECT AVG(length) FROM film_list WHERE category = 'Comedy';
+SELECT AVG(length) FROM film_list WHERE category = 'Sports';
+SELECT AVG(length) FROM film_list WHERE category = 'Music';
+SELECT AVG(length) FROM film_list WHERE category = 'Classics';
+SELECT AVG(length) FROM film_list WHERE category = 'Animation';
+SELECT AVG(length) FROM film_list WHERE category = 'Action';
+SELECT AVG(length) FROM film_list WHERE category = 'New';
+SELECT AVG(length) FROM film_list WHERE category = 'Sci-Fi';
+SELECT AVG(length) FROM film_list WHERE category = 'Drama';
+SELECT AVG(length) FROM film_list WHERE category = 'Travel';
+SELECT AVG(length) FROM film_list WHERE category = 'Games';
+SELECT AVG(length) FROM film_list WHERE category = 'Children';
+
+SELECT title FROM film_list WHERE description LIKE '%robot%';
+
+SELECT film_id, title FROM film WHERE release_year = 2010;
+SELECT count(film_id) FROM film WHERE release_year = 2010;
+
+SELECT title FROM film_list WHERE category = 'Horror';
+
+SELECT name FROM staff_list WHERE ID = 2;
+
+SELECT first_name, last_name, actor_id FROM actor WHERE last_name = 'COSTNER' and first_name = 'Fred';
+SELECT f.title FROM film f JOIN film_actor fa ON f.film_id=fa.film_id WHERE fa.actor_id = 16;
+
+SELECT DISTINCT country FROM country;
+
+SELECT name FROM language ORDER BY name DESC;
+
+SELECT first_name, last_name FROM actor_info WHERE last_name LIKE '%son' ORDER BY first_name DESC;
